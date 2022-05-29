@@ -13,7 +13,7 @@ for (let i = 0; i < txt.length; i++) {
   reverse = txt[i] + reverse;
 }
 
-console.log(txt.split("".reverse().join("")));
+console.log(txt.split("").reverse().join(""));
 
 // 3. 반장 선거
 const arr = ["원범", "원범", "혜원", "혜원", "혜원", "혜원", "유진", "유진"];
@@ -63,3 +63,6 @@ function checkPrime(n) {
   }
   console.log("YES");
 }
+
+checkPrime(5);
+checkPrime(6);
