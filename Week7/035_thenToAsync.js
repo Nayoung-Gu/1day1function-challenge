@@ -13,16 +13,28 @@ function loadJson(url) {
 loadJson("no-such-user.json").catch(alert); // Error: 404
 
 // Answer
-async function loadJson(url) {
-  // (1)
-  let response = await fetch(url);
+// async function loadJson(url) {
+//   // (1)
+//   let response = await fetch(url);
 
+//   if (response.status == 200) {
+//     let json = await response.json();
+//     return json;
+//   }
+
+//   throw new Error(response.status);
+// }
+
+// loadJson("no-such-user.json").catch(alert); // Error: 404 (4)
+
+async function loadJson(url) {
+  const response = await fetch(url);
   if (response.status == 200) {
-    let json = await response.json();
-    return json;
+    const data = response.json();
+    return data;
   }
 
   throw new Error(response.status);
 }
 
-loadJson("no-such-user.json").catch(alert); // Error: 404 (4)
+loadJson("blablah.json").catch(alert);
